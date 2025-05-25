@@ -63,11 +63,12 @@ export const verifyUser = TryCatch(async (req, res) => {
       message: "Wrong Otp",
     });
 
-  await User.create({
-    name: verify.user.name,
-    email: verify.user.email,
-    password: verify.user.password,
-  });
+    await User.create({
+      name: verify.user.name,
+      email: verify.user.email,
+      password: verify.user.password,
+      role: verify.user.email === "saraswatividyaf@gmail.com" ? "admin" : "user",
+    });
 
   res.json({
     message: "User Registered",
@@ -88,8 +89,14 @@ export const loginUser = TryCatch(async (req, res) => {
 
   if (!mathPassword)
     return res.status(400).json({
-      message: "wrong Password",
+      message: "Wrong Password",
     });
+
+  // ✅ Auto-assign admin role
+  if (user.email === "saraswatividyaf@gmail.com" && user.role !== "admin") {
+    user.role = "admin";
+    await user.save();
+  }
 
   const token = jwt.sign({ _id: user._id }, process.env.Jwt_Sec, {
     expiresIn: "15d",
@@ -101,6 +108,7 @@ export const loginUser = TryCatch(async (req, res) => {
     user,
   });
 });
+
 
 export const myProfile = TryCatch(async (req, res) => {
   const user = await User.findById(req.user._id);

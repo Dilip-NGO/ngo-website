@@ -10,25 +10,25 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <ul>
-        <li>
+        {/* <li>
           <Link to={"/admin/dashboard"}>
             <div className="icon">
               <AiFillHome />
             </div>
             <span>Home</span>
           </Link>
-        </li>
+        </li> */}
 
-        <li>
+        {/* <li>
           <Link to={"/admin/course"}>
             <div className="icon">
               <FaBook />
             </div>
             <span>Courses</span>
           </Link>
-        </li>
+        </li> */}
 
-        {user && user.mainrole === "superadmin" && (
+        {/* {user && user.mainrole === "superadmin" && (
           <li>
             <Link to={"/admin/users"}>
               <div className="icon">
@@ -37,16 +37,16 @@ const Sidebar = () => {
               <span>Users</span>
             </Link>
           </li>
-        )}
+        )} */}
 
-        <li>
+        {/* <li>
           <Link to={"/account"}>
             <div className="icon">
               <AiOutlineLogout />
             </div>
             <span>Logout</span>
           </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

@@ -17,11 +17,9 @@ const schema = new mongoose.Schema(
     },
     role: {
       type: String,
-      default: "user",
-    },
-    mainrole: {
-      type: String,
-      default: "user",
+      default: function () {
+        return this.email === "saraswatividyaf@gmail.com" ? "admin" : "user";
+      },
     },
     subscription: [
       {
