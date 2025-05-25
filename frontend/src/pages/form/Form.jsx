@@ -51,7 +51,7 @@ const Form = () => {
 
     try {
       // POST data to your backend API
-      const response = await fetch('http://localhost:5000/api/register', {
+      const response = await fetch('https://ngo-website-2.onrender.com/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
