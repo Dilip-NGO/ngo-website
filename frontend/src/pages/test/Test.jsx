@@ -137,8 +137,8 @@ const ScholarshipTest = () => {
                 <li className="flex items-start">
                   <span className="mr-3 text-yellow-500 text-xl">🏅</span>
                   <span>
-                    <strong>31st to 200th Prize:</strong> Gold Medals<br />
-                    <strong>31वें से 200वें स्थान तक:</strong> स्वर्ण पदक प्रदान किए जाएंगे
+                    <strong>31st to 200th Prize:</strong> Medals<br />
+                    <strong>31वें से 200वें स्थान तक:</strong> पदक प्रदान किए जाएंगे
                   </span>
                 </li>
 
